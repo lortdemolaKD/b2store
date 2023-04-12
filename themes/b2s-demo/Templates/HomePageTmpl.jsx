@@ -24,10 +24,17 @@ const HomePageTmpl = ({ allCollections, allProducts, collections, products }) =>
       />
       <section className="section section-home-page">
         <div className="container">
-          <h1 className="text-center">New Arrivals</h1>
+          <h1 className="text-center">frontpage</h1>
+          <div>
+            <Link to={getProductPath(products['tsirt'].slug)}>{products['tsirt'].title}</Link>
+
+            <img src={products['tsirt'].featured_image.url}></img>
+            {products['tsirt'].description}
+            {products['tsirt'].prices.min}
+          </div>
           <p className="text-center mb-5">See our newest products, just arrived to our online store!</p>
           <div className="categories__list">
-            {collections['new-arrivals'].products.map((product) => (
+            {collections['frontpage'].products.map((product) => (
               <div className="product__item" key={product.id}>
                 <div className="product__item--image">
                   <Link href={getProductPath(product.slug)}>
